@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public CorsConfigurationSource corsConfigurationSource() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://todo-frontend.onrender.com", "http://localhost:4200"));
+        configuration.setAllowedOrigins(List.of("https://todo-frontend-1uu3.onrender.com", "http://localhost:4200"));
         configuration.setAllowedMethods(List.of("GET", "PUT", "POST", "DELETE", "OPTIONS"));
         configuration.setAllowedMethods(List.of("Authorization", "Content-Type"));
         configuration.setExposedHeaders(List.of("Authorization"));
