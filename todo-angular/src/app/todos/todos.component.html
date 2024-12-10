@@ -1,0 +1,51 @@
+<div class="todos-container">
+    <h2>Todos</h2>
+
+    <!-- Add/Edit Todo Section -->
+    <div *ngIf="!editingTodo" class="new-todo">
+        <input type="text" [(ngModel)]="newTodo.title" placeholder="Title" />
+        <input type="text" [(ngModel)]="newTodo.description" placeholder="Description" />
+        <button (click)="addTodo()">Add Todo</button>
+    </div>
+
+    <div *ngIf="editingTodo" class="edit-todo">
+        <h3>Edit Todo</h3>
+        <input type="text" [(ngModel)]="editingTodo.title" placeholder="Title" />
+        <input type="text" [(ngModel)]="editingTodo.description" placeholder="Description" />
+        <button (click)="updateTodo()">Update Todo</button>
+        <button (click)="cancelEdit()">Cancel</button>
+    </div>
+
+    <!-- Todo List Section -->
+    <div class="todo-list">
+        <h3>To-Do List</h3>
+        <ul>
+            <li *ngFor="let todo of todos; let i = index">
+                <div class="todo-details">
+                    <h3>{{ todo.title }}</h3>
+                    <p>{{ todo.description }}</p>
+                </div>
+                <div class="todo-actions">
+                    <input type="checkbox" [checked]="todo.completed" (change)="toggleCompleted(todo)" />
+                    <button (click)="editTodo(todo)">Edit</button>
+                    <button (click)="deleteTodo(todo.id)">Delete</button>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Completed Todos</h3>
+        <ul>
+            <li *ngFor="let todo of completedTodos">
+                <div class="todo-details">
+                    <h3>{{ todo.title }}</h3>
+                    <p>{{ todo.description }}</p>
+                </div>
+                <div class="todo-actions">
+                    <input type="checkbox" [checked]="todo.completed" (change)="toggleCompleted(todo)" />
+                    <button (click)="editTodo(todo)">Edit</button>
+                    <button (click)="deleteTodo(todo.id)">Delete</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

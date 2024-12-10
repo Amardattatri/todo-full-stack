@@ -1,0 +1,40 @@
+header {
+    background-color: #00796b;
+    padding: 10px;
+    color: white;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  .user-info {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #f1f8e9;
+  }
+  

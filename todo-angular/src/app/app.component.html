@@ -1,0 +1,13 @@
+<header>
+  <nav>
+    <ul>
+      <li class="spacer"></li>
+      <li class="user-info">YOUR TO-DO LIST</li>
+      <li class="spacer"></li>
+      <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
