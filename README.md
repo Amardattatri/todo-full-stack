@@ -6,9 +6,13 @@ https://todo-frontend-1uu3.onrender.com
 
 # Backend story
 Language: Java
+
 FW: Spring boot
+
 Feature: Spring security, Spring profile, Spring (Authentication, Authorization), Spring Hibernate/JPA
+
 Database: PostgreSQL
+
 Deployment: Using Dockerfile
 
 # Frontend story
