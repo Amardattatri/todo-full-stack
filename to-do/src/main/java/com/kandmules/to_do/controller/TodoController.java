@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/todos")
-@CrossOrigin(origins = {"http://localhost:4200", "https://todo-frontend-1uu3.onrender.com"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 public class TodoController {
 
     @Autowired
@@ -28,7 +27,7 @@ public class TodoController {
     public ResponseEntity<Page<Todo>> getToDos(@RequestHeader("Authorization") String token,
                                                @RequestParam(required = false) Boolean completed,
                                                Pageable pageable) {
-        String username = jwtUtil.extractUsername(token);
+        String username = jwtUtil.extractUsername(token.substring(7));
         User user = userService.getUserByUsername(username);
         return ResponseEntity.ok(todoService.getToDos(user, completed, pageable));
     }
@@ -36,7 +35,7 @@ public class TodoController {
     @PostMapping
     public ResponseEntity<Todo> createToDo(@RequestHeader("Authorization") String token,
                                            @RequestBody ToDoRequest toDoRequest) {
-        String username = jwtUtil.extractUsername(token);
+        String username = jwtUtil.extractUsername(token.substring(7));
         User user = userService.getUserByUsername(username);
         Todo todo = new Todo(null,
                 toDoRequest.getTitle(),
@@ -49,7 +48,7 @@ public class TodoController {
     public ResponseEntity<Todo> updateToDo(@PathVariable Long id,
                                            @RequestHeader("Authorization") String token,
                                            @RequestBody ToDoRequest toDoRequest) {
-        String username = jwtUtil.extractUsername(token);
+        String username = jwtUtil.extractUsername(token.substring(7));
         User user = userService.getUserByUsername(username);
         Todo todo = new Todo(id,
                 toDoRequest.getTitle(),
