@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/todos")
-@CrossOrigin(origins = {"http://localhost:4200", "http://todo-frontend.onrender.com"})
 public class TodoController {
 
     @Autowired
