@@ -17,8 +17,11 @@ Deployment: Using Dockerfile
 
 # Frontend story
 Language: Typescript
+
 WEB design: Html/Css
+
 FW: Angular
+
 Deployment: Using npm
 
 # Deployment
