@@ -38,3 +38,8 @@ Platform: Render
 # A simple to-do application 
 
 A user can add, update, mark as done or delete his note/todo's
+
+# Images 
+
+![image](https://github.com/user-attachments/assets/eb62393f-a3e0-4c9c-993e-504f3bd40437)
+
